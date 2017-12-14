@@ -1,0 +1,17 @@
+form(method='POST' action='' id='personForm')
+	div.form-group
+		input#txtIdHidden.form-control(type='hidden' value='0' name='txtIdHidden')
+	div.form-group
+		label(for='title') DUI:
+		input#txtDui.form-control(type='text' placeholder='DUI' name='txtDui' value='' minlength='10' maxlength='10')
+	div.form-group
+		label(for='title') Name:
+		input#txtName.form-control(type='text' placeholder='Name' name='txtName' value='' required)
+	div.form-group
+		label(for='title') Age:
+		input#txtAge.form-control(type='number' name='txtAge' placeholder='23' value='' min='18' max='100' required)
+	div.form-group
+		label(for='description') Address:
+		input#txtAddress.form-control(type='textarea' placeholder='Address' name='txtAddress' value='' required='true')
+	button.btn.btn-primary(type='submit') Save 
+		i(class='fa fa-floppy-o', aria-hidden='true')

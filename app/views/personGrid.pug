@@ -1,0 +1,34 @@
+extends layout
+
+block stylesheets
+	link(rel='stylesheet' href='/lib/datatables/media/css/dataTables.bootstrap.css')
+
+	div(class='row')
+		div(class='col-md-8 col-md-offset-2' id='content')
+			button(type='button', class='btn btn-primary pull-right', data-action='new', id='btnNew') New 
+				i(class='fa fa-plus', aria-hidden='true')
+	br
+block content
+	table(class='table table-hover table-bordered table-stripped table-responsive' id='personGrid')
+		thead
+			th ID
+			th DUI
+			th NAME
+			th AGE
+			th ADDRESS
+			th OPTIONS
+		tbody
+			
+	textarea(id='gridButtons' style='display:none;')
+		<div class="btn-group" data-row="{data}">
+			<button class='btn btn-warning btn-xs button-edit' data-action="edit" data-placement="top" title="Editar"><i class='fa fa-pencil'></i></button>
+			<button class='btn btn-danger btn-xs button-delete' data-action="delete" data-placement="top" title="Eliminar"><i class='fa fa-times'></i></button>
+		</div>
+	textarea(id='personFormBody' style='display:none;')
+		include forms/personForm
+
+block scripts
+	script(src='/lib/datatables/media/js/jquery.dataTables.js')
+	script(src='/lib/datatables/media/js/dataTables.bootstrap.js')
+	script(src='/lib/jquery-validation/dist/jquery.validate.min.js')
+	script(src='/javascripts/frontend/person.js')
